@@ -1,17 +1,18 @@
-let cage;
-let x = 2;
-let y = 2;
+let cageSize = prompt("Choisissez la taille de la cage");
+
+let x = Math.floor(cageSize / 2);
+let y = Math.floor(cageSize / 2);
 
 // Définition du tableau
-cage = document.createElement('table');
+let cage = document.createElement('table');
 cage.style.borderCollapse = `collapse`;
 cage.style.margin = `200px auto`;
 out.appendChild(cage);
 
 // Création des lignes et des cellules
-for (a = 0; a < 5; a++) {
+for (a = 0; a < cageSize; a++) {
 	let tr = cage.insertRow();
-	for (b = 0; b < 5; b++) {
+	for (b = 0; b < cageSize; b++) {
 		let td = tr.insertCell();
 		td.style.border = `1px solid black`;
 		td.style.width = `100px`;
@@ -34,19 +35,19 @@ function clear(){
 
 // Déplacement du pion
 function deplacement(key){
-	if(key.code == 'ArrowUp' && x > 0) {
+	if(key.code === 'ArrowUp' && x > 0) {
 		clear();
 		x--;
 	}
-	if(key.code == 'ArrowDown' && x < 4) {
+	if(key.code === 'ArrowDown' && x < cageSize-1) {
 		clear();
 		x++;
 	}
-	if(key.code == 'ArrowLeft' && y > 0) {
+	if(key.code === 'ArrowLeft' && y > 0) {
 		clear();
 		y--;
-	}
-	if(key.code == 'ArrowRight' && y < 4) {
+	}10
+	if(key.code === 'ArrowRight' && y < cageSize-1) {
 		clear();
 		y++;
 	}
